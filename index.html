@@ -29,9 +29,10 @@
     </div>
 
     <div class="uk-container">
+
         <br>
-        <div class="uk-card uk-card-default uk-card-hover uk-card-body">
-            <h3 class="uk-card-title">Introductorio</h3>
+        <div class="uk-card uk-card-default uk-card-hover uk-card-body"><!--Beginning Card 1-->
+            <h3 class="uk-card-title">Entrada de Usuario</h3>
             <div class="uk-child-width-1-2@m" uk-grid>
                 <div>
                     <div class="uk-card uk-card-default uk-card-hover" id="fieldTest">
@@ -47,12 +48,40 @@
                     <div class="uk-card uk-card-default uk-card-hover" id="loopTest">
                         <div class="uk-card-body">
                             <h3 class="uk-card-title">Loops</h3>
-                            <p>Ingresa un numero, un texto al azar aparecera <i>n</i> numero de veces.</p>
-                            <input v-model="loopTest" class="uk-input" type="number" placeholder="Cantidad..." required>
+                            <p>Ingresa un numero, numeros al azar aparecerán <i>n</i> numero de veces.</p>
+                            <ul>
+                                <li v-for="numbers in loopedNumbers">
+                                    {{ numbers.msg }}
+                                </li>
+                            </ul>
+                            <br>
+                            <input v-model="inputNumber" class="uk-input" type="number" placeholder="Cantidad..."
+                                required>
+                            <br>
+                            <br>
+                            <button v-on:click="poblateArr"
+                                class="uk-button uk-button-primary">Iterar</button><span></span><button
+                                v-on:click="clearView" class="uk-button uk-button-danger">Limpiar</button>
                         </div>
                     </div>
                 </div>
             </div>
+        </div><!--End Card 1-->
+
+        <br>
+
+        <div class="uk-card uk-card-default uk-card-hover uk-card-body" id="componentFactory">
+            <h3 class="uk-card-title">Componentes</h3>
+            <p>Presiona un botón para hacer aparecer distintos componentes de UI-Kit</p>
+
+            <br>
+            
+            <button v-on:click="generateCard" class="uk-button uk-button-primary">Aparecer Tarjeta</button>
+            
+            <div id="cardGenerator">
+                <uikit-card-hover></uikit-card-hover>
+            </div>
+            
         </div>
 
 

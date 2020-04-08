@@ -31,7 +31,8 @@
     <div class="uk-container">
 
         <br>
-        <div class="uk-card uk-card-default uk-card-hover uk-card-body"><!--Beginning Card 1-->
+        <div class="uk-card uk-card-default uk-card-hover uk-card-body">
+            <!--Beginning Card 1-->
             <h3 class="uk-card-title">Entrada de Usuario</h3>
             <div class="uk-child-width-1-2@m" uk-grid>
                 <div>
@@ -47,7 +48,7 @@
                 <div>
                     <div class="uk-card uk-card-default uk-card-hover" id="loopTest">
                         <div class="uk-card-body">
-                            <h3 class="uk-card-title">Loops</h3>
+                            <h3 class="uk-card-title">Loop</h3>
                             <p>Ingresa un numero, numeros al azar aparecerán <i>n</i> numero de veces.</p>
                             <ul>
                                 <li v-for="numbers in loopedNumbers">
@@ -66,22 +67,35 @@
                     </div>
                 </div>
             </div>
-        </div><!--End Card 1-->
+        </div>
+        <!--End Card 1-->
 
         <br>
 
         <div class="uk-card uk-card-default uk-card-hover uk-card-body" id="componentFactory">
             <h3 class="uk-card-title">Componentes</h3>
-            <p>Presiona un botón para hacer aparecer distintos componentes de UI-Kit</p>
 
             <br>
+
+            <uikit-card-hover></uikit-card-hover>
+
+            <br>
+            <br>
             
-            <button v-on:click="generateCard" class="uk-button uk-button-primary">Aparecer Tarjeta</button>
-            
-            <div id="cardGenerator">
-                <uikit-card-hover></uikit-card-hover>
+            <div id="componentWrapper">
+                <button v-on:click="generateCard" class="uk-button uk-button-primary">Tarjeta</button>
+                
+                <br>
+                <br>
+
+                <component-wrapper id="storeComponent">
+                </component-wrapper>
+
+                <br>
+
             </div>
             
+
         </div>
 
 
